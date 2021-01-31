@@ -8,7 +8,7 @@
 
         public decimal TaxaJuros()
         {
-            return 0.01M;
+            return 0.01m;
         }
     }
 }
