@@ -3,10 +3,10 @@ using TaxaJuros.Aplicacao;
 
 namespace TaxaJuros.Controllers
 {
-    [Route("api/taxaJuros")]
+    [Route("taxaJuros")]
     public class TaxaJurosController: ControllerBase
     {
-        public readonly IAplicTaxaJuros _aplicTaxaJuros;
+        private readonly IAplicTaxaJuros _aplicTaxaJuros;
 
         public TaxaJurosController(IAplicTaxaJuros aplicTaxaJuros)
         {
@@ -14,7 +14,7 @@ namespace TaxaJuros.Controllers
         }
 
         [HttpGet]
-        public ActionResult<decimal> TaxaJuros()
+        public decimal TaxaJuros()
         {
             var ret = _aplicTaxaJuros.TaxaJuros();
             return ret;  
