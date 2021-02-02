@@ -41,7 +41,11 @@ namespace TaxaJuros
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
-                app.UseSwaggerUI(p => p.SwaggerEndpoint("/swagger/v1/swagger.json", "Taxa Juros"));
+                app.UseSwaggerUI(p => 
+                {
+                    p.SwaggerEndpoint("/swagger/v1/swagger.json", "Taxa juros");
+                    p.ValidatorUrl(null);
+                });
                 app.UseDeveloperExceptionPage();
             }
             else
